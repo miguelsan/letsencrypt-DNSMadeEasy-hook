@@ -89,7 +89,7 @@ def _has_dns_propagated(name, token):
 # http://api.dnsmadeeasy.com/V2.0/dns/managed/id/{domainname}
 def _def _get_zone_id(domain, use_tld=True):
     # allow both tlds and subdomains hosted on DNSMadeEasy
-    tld = tld = domain[domain.find('.')+1:] if use_tld else domain
+    tld = domain[domain.find('.')+1:] if use_tld else domain
     url = DME_API_BASE_URL[DME_SERVER]
     r = requests.get(url, headers=DME_HEADERS)
     r.raise_for_status()
