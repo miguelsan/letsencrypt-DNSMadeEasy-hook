@@ -87,7 +87,7 @@ def _has_dns_propagated(name, token):
     return False
 
 # http://api.dnsmadeeasy.com/V2.0/dns/managed/id/{domainname}
-def _def _get_zone_id(domain, use_tld=True):
+def _get_zone_id(domain, use_tld=True):
     # allow both tlds and subdomains hosted on DNSMadeEasy
     tld = domain[domain.find('.')+1:] if use_tld else domain
     url = DME_API_BASE_URL[DME_SERVER]
