@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 # dnsmadeeasy hook for letsencrypt.sh
 # http://www.dnsmadeeasy.com/integration/pdf/API-Docv2.pdf
 
@@ -76,12 +76,13 @@ def _has_dns_propagated(name, token):
             dns_response = dns.resolver.query(name, 'TXT')
         for rdata in dns_response:
             for txt_record in rdata.strings:
-                txt_records.append(txt_record.decode())
+                print('found TXT record: ' + txt_record)
+                txt_records.append(txt_record)
     except dns.exception.DNSException as error:
         return False
 
     for txt_record in txt_records:
-        if txt_record == bytearray(token, 'ascii'):
+        if txt_record == token:
             return True
 
     return False
