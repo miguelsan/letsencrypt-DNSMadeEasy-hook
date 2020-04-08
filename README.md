@@ -8,7 +8,7 @@ This a hook for the [Let's Encrypt](https://letsencrypt.org/) ACME client [dehyd
 $ git clone https://github.com/lukas2511/dehydrated
 $ cd dehydrated
 $ mkdir hooks
-$ git clone https://github.com/thedmi/letsencrypt-dnsmadeeasy-hook hooks/dnsmadeeasy
+$ git clone https://github.com/miguelsan/letsencrypt-dnsmadeeasy-hook hooks/dnsmadeeasy
 $ pip install -r hooks/dnsmadeeasy/requirements.txt
 $ export DME_API_KEY='YOUR_API_KEY_HERE'
 $ export DME_SECRET_KEY='YOUR_SECRET_KEY_HERE'
